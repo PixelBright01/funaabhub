@@ -1,0 +1,250 @@
+<?php $activePage = 'find-agent'; include 'includes/navbar.php'; ?>
+
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">Find a Verified Agent</h1>
+    <p class="page-header__subtitle">Browse SUG-verified housing agents by area and department. Every agent listed has been vetted by the welfare directorate.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="filter-bar">
+      <div class="filter-bar__group">
+        <label for="areaFilter">Area</label>
+        <select id="areaFilter" class="filter-select">
+          <option value="all">All Areas</option>
+          <option value="camp">Camp</option>
+          <option value="harmony">Harmony</option>
+          <option value="gateway">Gateway</option>
+          <option value="aluta">Aluta</option>
+          <option value="campus-extension">Campus Extension</option>
+        </select>
+      </div>
+      <div class="filter-bar__group">
+        <label for="deptFilter">Department</label>
+        <select id="deptFilter" class="filter-select">
+          <option value="all">All Departments</option>
+          <option value="csc">Computer Science</option>
+          <option value="agg">Agriculture</option>
+          <option value="eep">Electrical Engineering</option>
+          <option value="mcb">Microbiology</option>
+          <option value="bus">Business Admin</option>
+          <option value="acc">Accounting</option>
+          <option value="eco">Economics</option>
+          <option value="slt">Science Lab Tech</option>
+        </select>
+      </div>
+      <button id="searchBtn" class="btn btn--primary">Search</button>
+    </div>
+
+    <div class="filter-pills">
+      <button class="filter-pill is-active" data-area="all">All</button>
+      <button class="filter-pill" data-area="camp">Camp</button>
+      <button class="filter-pill" data-area="harmony">Harmony</button>
+      <button class="filter-pill" data-area="gateway">Gateway</button>
+      <button class="filter-pill" data-area="aluta">Aluta</button>
+      <button class="filter-pill" data-area="campus-extension">Campus Extension</button>
+    </div>
+
+    <div class="agent-grid">
+
+      <div class="agent-card reveal" data-area="camp" data-dept="csc">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Adewale John">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Adewale John</h3>
+          <p class="agent-card__matric">MAT/20/22/0001</p>
+          <p class="agent-card__dept">Computer Science</p>
+          <p class="agent-card__area">Camp</p>
+          <p class="agent-card__id">Agent ID: AGT-0001</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="harmony" data-dept="agg">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Blessing Okafor">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Blessing Okafor</h3>
+          <p class="agent-card__matric">MAT/20/22/0045</p>
+          <p class="agent-card__dept">Agriculture</p>
+          <p class="agent-card__area">Harmony</p>
+          <p class="agent-card__id">Agent ID: AGT-0045</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="gateway" data-dept="eep">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Chukwuemeka Dibia">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Chukwuemeka Dibia</h3>
+          <p class="agent-card__matric">MAT/19/21/0112</p>
+          <p class="agent-card__dept">Electrical Engineering</p>
+          <p class="agent-card__area">Gateway</p>
+          <p class="agent-card__id">Agent ID: AGT-0112</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="aluta" data-dept="mcb">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatima Bello">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Fatima Bello</h3>
+          <p class="agent-card__matric">MAT/21/23/0078</p>
+          <p class="agent-card__dept">Microbiology</p>
+          <p class="agent-card__area">Aluta</p>
+          <p class="agent-card__id">Agent ID: AGT-0078</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="campus-extension" data-dept="bus">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Ibrahim Suleiman">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Ibrahim Suleiman</h3>
+          <p class="agent-card__matric">MAT/20/22/0199</p>
+          <p class="agent-card__dept">Business Admin</p>
+          <p class="agent-card__area">Campus Extension</p>
+          <p class="agent-card__id">Agent ID: AGT-0199</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="camp" data-dept="acc">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Yetunde Adesanya">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Yetunde Adesanya</h3>
+          <p class="agent-card__matric">MAT/19/21/0034</p>
+          <p class="agent-card__dept">Accounting</p>
+          <p class="agent-card__area">Camp</p>
+          <p class="agent-card__id">Agent ID: AGT-0034</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="harmony" data-dept="eco">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Oluwaseun Adeyemi">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Oluwaseun Adeyemi</h3>
+          <p class="agent-card__matric">MAT/21/23/0056</p>
+          <p class="agent-card__dept">Economics</p>
+          <p class="agent-card__area">Harmony</p>
+          <p class="agent-card__id">Agent ID: AGT-0056</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="gateway" data-dept="slt">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/women/15.jpg" alt="Amara Nwosu">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Amara Nwosu</h3>
+          <p class="agent-card__matric">MAT/20/22/0167</p>
+          <p class="agent-card__dept">Science Lab Tech</p>
+          <p class="agent-card__area">Gateway</p>
+          <p class="agent-card__id">Agent ID: AGT-0167</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="aluta" data-dept="csc">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="Tunde Bakare">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Tunde Bakare</h3>
+          <p class="agent-card__matric">MAT/19/21/0223</p>
+          <p class="agent-card__dept">Computer Science</p>
+          <p class="agent-card__area">Aluta</p>
+          <p class="agent-card__id">Agent ID: AGT-0223</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="campus-extension" data-dept="agg">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/women/37.jpg" alt="Halima Abubakar">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Halima Abubakar</h3>
+          <p class="agent-card__matric">MAT/21/23/0089</p>
+          <p class="agent-card__dept">Agriculture</p>
+          <p class="agent-card__area">Campus Extension</p>
+          <p class="agent-card__id">Agent ID: AGT-0089</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="camp" data-dept="eep">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="Kola Adebayo">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Kola Adebayo</h3>
+          <p class="agent-card__matric">MAT/20/22/0145</p>
+          <p class="agent-card__dept">Electrical Engineering</p>
+          <p class="agent-card__area">Camp</p>
+          <p class="agent-card__id">Agent ID: AGT-0145</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+      <div class="agent-card reveal" data-area="harmony" data-dept="bus">
+        <div class="agent-card__photo">
+          <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Ngozi Eze">
+          <span class="agent-card__badge">&#10003; Verified</span>
+        </div>
+        <div class="agent-card__body">
+          <h3 class="agent-card__name">Ngozi Eze</h3>
+          <p class="agent-card__matric">MAT/19/21/0078</p>
+          <p class="agent-card__dept">Business Admin</p>
+          <p class="agent-card__area">Harmony</p>
+          <p class="agent-card__id">Agent ID: AGT-0078</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('agentModal')">View Profile</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="agentModal">
+  <div class="modal__backdrop"></div>
+  <div class="modal__content">
+    <button class="modal__close" data-modal-close>&times;</button>
+    <h2 class="modal__title">Agent Profile</h2>
+    <p class="modal__text">Full agent profile details will be displayed here. This includes contact information, listing history, and verification status.</p>
+    <div class="modal__actions">
+      <a href="contact.html" class="btn btn--primary">Contact Agent</a>
+      <button class="btn btn--ghost" data-modal-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<?php include 'includes/footer.php'; ?>

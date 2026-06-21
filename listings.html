@@ -1,0 +1,221 @@
+<?php $activePage = 'listings'; include 'includes/navbar.php'; ?>
+
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">House Listings</h1>
+    <p class="page-header__subtitle">Browse verified student housing options near FUNAAB. All listings are posted by SUG-verified agents.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="filter-bar">
+      <div class="filter-bar__group">
+        <label for="areaFilter">Area</label>
+        <select id="areaFilter" class="filter-select">
+          <option value="all">All Areas</option>
+          <option value="camp">Camp</option>
+          <option value="harmony">Harmony</option>
+          <option value="gateway">Gateway</option>
+          <option value="aluta">Aluta</option>
+          <option value="campus-extension">Campus Extension</option>
+        </select>
+      </div>
+      <div class="filter-bar__group">
+        <label for="priceFilter">Max Price (NGN)</label>
+        <select id="priceFilter" class="filter-select">
+          <option value="all">Any Price</option>
+          <option value="100000">Up to &#8358;100,000</option>
+          <option value="150000">Up to &#8358;150,000</option>
+          <option value="200000">Up to &#8358;200,000</option>
+          <option value="300000">Up to &#8358;300,000</option>
+          <option value="500000">Up to &#8358;500,000</option>
+        </select>
+      </div>
+      <div class="filter-bar__group">
+        <label for="roomFilter">Rooms</label>
+        <select id="roomFilter" class="filter-select">
+          <option value="all">Any</option>
+          <option value="1">1 Room</option>
+          <option value="2">2 Rooms</option>
+          <option value="3">3 Rooms</option>
+          <option value="4">4 Rooms</option>
+        </select>
+      </div>
+      <button id="searchBtn" class="btn btn--primary">Search</button>
+    </div>
+
+    <div class="listing-grid">
+
+      <div class="listing-card reveal" data-area="camp" data-price="120000" data-rooms="1">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house1/600/400" alt="Self-Contian Room in Camp">
+          <span class="listing-card__price">&#8358;120,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">Self-Contain Room in Camp</h3>
+          <p class="listing-card__location">Camp, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>1 Room</span>
+            <span>1 Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Adewale John</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="harmony" data-price="180000" data-rooms="2">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house2/600/400" alt="2-Bedroom Flat in Harmony">
+          <span class="listing-card__price">&#8358;180,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">2-Bedroom Flat in Harmony</h3>
+          <p class="listing-card__location">Harmony, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>2 Rooms</span>
+            <span>1 Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Blessing Okafor</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="gateway" data-price="150000" data-rooms="1">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house3/600/400" alt="Room & Parlour in Gateway">
+          <span class="listing-card__price">&#8358;150,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">Room &amp; Parlour in Gateway</h3>
+          <p class="listing-card__location">Gateway, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>1 Room</span>
+            <span>1 Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Chukwuemeka Dibia</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="aluta" data-price="95000" data-rooms="1">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house4/600/400" alt="Single Room in Aluta">
+          <span class="listing-card__price">&#8358;95,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">Single Room in Aluta</h3>
+          <p class="listing-card__location">Aluta, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>1 Room</span>
+            <span>Shared Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Fatima Bello</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="campus-extension" data-price="200000" data-rooms="2">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house5/600/400" alt="2-Bedroom Bungalow">
+          <span class="listing-card__price">&#8358;200,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">2-Bedroom Bungalow</h3>
+          <p class="listing-card__location">Campus Extension, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>2 Rooms</span>
+            <span>2 Bathrooms</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Ibrahim Suleiman</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="camp" data-price="250000" data-rooms="3">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house6/600/400" alt="3-Bedroom Flat">
+          <span class="listing-card__price">&#8358;250,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">3-Bedroom Flat near Campus</h3>
+          <p class="listing-card__location">Camp, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>3 Rooms</span>
+            <span>2 Bathrooms</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Yetunde Adesanya</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="harmony" data-price="130000" data-rooms="1">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house7/600/400" alt="Self-Contain in Harmony">
+          <span class="listing-card__price">&#8358;130,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">Self-Contain in Harmony</h3>
+          <p class="listing-card__location">Harmony, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>1 Room</span>
+            <span>1 Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Oluwaseun Adeyemi</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="gateway" data-price="160000" data-rooms="2">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house8/600/400" alt="2-Room Apartment">
+          <span class="listing-card__price">&#8358;160,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">2-Room Apartment in Gateway</h3>
+          <p class="listing-card__location">Gateway, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>2 Rooms</span>
+            <span>1 Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Amara Nwosu</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+      <div class="listing-card reveal" data-area="aluta" data-price="110000" data-rooms="1">
+        <div class="listing-card__image">
+          <img src="https://picsum.photos/seed/house9/600/400" alt="Room & Parlour in Aluta">
+          <span class="listing-card__price">&#8358;110,000/yr</span>
+        </div>
+        <div class="listing-card__body">
+          <h3 class="listing-card__title">Room &amp; Parlour in Aluta</h3>
+          <p class="listing-card__location">Aluta, Abeokuta</p>
+          <div class="listing-card__details">
+            <span>1 Room</span>
+            <span>1 Bathroom</span>
+          </div>
+          <p class="listing-card__agent">Listed by <a href="find-agent.html">Tunde Bakare</a></p>
+          <button class="btn btn--primary btn--full" onclick="openModal('listingModal')">View Details</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="listingModal">
+  <div class="modal__backdrop"></div>
+  <div class="modal__content">
+    <button class="modal__close" data-modal-close>&times;</button>
+    <h2 class="modal__title">Listing Details</h2>
+    <p class="modal__text">Full property details including photos, amenities, landmark proximity, and agent contact will be displayed here.</p>
+    <div class="modal__actions">
+      <a href="contact.html" class="btn btn--primary">Contact Agent</a>
+      <button class="btn btn--ghost" data-modal-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<?php include 'includes/footer.php'; ?>

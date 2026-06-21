@@ -1,0 +1,110 @@
+<?php $activePage = 'report-scam'; include 'includes/navbar.php'; ?>
+
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">Verify or Report an Agent</h1>
+    <p class="page-header__subtitle">Check if an agent is verified or report suspicious activity. Your reports help keep the community safe.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="verify-report-grid">
+
+      <div class="verify-card reveal">
+        <div class="verify-card__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h2 class="verify-card__title">Verify an Agent</h2>
+        <p class="verify-card__text">Enter the agent's name or Agent ID to check their verification status and view any reports filed against them.</p>
+        <form id="verifyForm" class="form">
+          <div class="form__group">
+            <label for="verifyInput">Agent Name or ID</label>
+            <input type="text" id="verifyInput" class="form__input" placeholder="e.g. AGT-0001 or Adewale John" required>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Verify Agent</button>
+        </form>
+        <div class="verify-result" id="verifyResult" style="display:none;">
+          <div class="verify-result__badge verify-result__badge--verified">&#10003; Agent Verified</div>
+          <p class="verify-result__text">This agent is registered with SUG and in good standing. No reports filed.</p>
+        </div>
+      </div>
+
+      <div class="report-card reveal">
+        <div class="report-card__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h2 class="report-card__title">Report a Scam</h2>
+        <p class="report-card__text">If you have been scammed or have information about fraudulent activity, submit a report. All reports are treated confidentially.</p>
+        <form id="reportForm" class="form">
+          <div class="form__group">
+            <label for="reportAgentName">Agent Name or ID</label>
+            <input type="text" id="reportAgentName" class="form__input" placeholder="Agent name or ID" required>
+          </div>
+          <div class="form__group">
+            <label for="reportPhone">Your Phone Number</label>
+            <input type="tel" id="reportPhone" class="form__input" placeholder="0801 234 5678" required>
+          </div>
+          <div class="form__group">
+            <label for="reportDescription">Description of Incident</label>
+            <textarea id="reportDescription" class="form__textarea" rows="5" placeholder="Provide details: what happened, when, how much was involved, any evidence you have..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--danger btn--full">Submit Report</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Recent Reports</h2>
+    <div class="reports-table-wrapper">
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Agent</th>
+            <th>Area</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jun 15, 2026</td>
+            <td>Unregistered Agent near Gateway</td>
+            <td>Gateway</td>
+            <td><span class="status-badge status-badge--investigating">Investigating</span></td>
+          </tr>
+          <tr>
+            <td>Jun 10, 2026</td>
+            <td>Agent ID: AGT-0099</td>
+            <td>Aluta</td>
+            <td><span class="status-badge status-badge--resolved">Resolved</span></td>
+          </tr>
+          <tr>
+            <td>Jun 05, 2026</td>
+            <td>Unknown agent near Harmony</td>
+            <td>Harmony</td>
+            <td><span class="status-badge status-badge--resolved">Resolved</span></td>
+          </tr>
+          <tr>
+            <td>May 28, 2026</td>
+            <td>Agent ID: AGT-0067</td>
+            <td>Camp</td>
+            <td><span class="status-badge status-badge--investigating">Investigating</span></td>
+          </tr>
+          <tr>
+            <td>May 20, 2026</td>
+            <td>Unregistered Agent near Campus Ext.</td>
+            <td>Campus Extension</td>
+            <td><span class="status-badge status-badge--resolved">Resolved</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<?php include 'includes/footer.php'; ?>

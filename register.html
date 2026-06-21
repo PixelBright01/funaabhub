@@ -1,0 +1,168 @@
+<?php $activePage = 'register'; include 'includes/navbar.php'; ?>
+
+<section class="page-header">
+  <div class="container">
+    <h1 class="page-header__title">Register as an Agent</h1>
+    <p class="page-header__subtitle">Join the network of verified student housing agents at FUNAAB. Complete the form below to begin the verification process.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="register-grid">
+
+      <div class="register-form-wrapper reveal">
+        <form id="registerForm" class="form">
+          <h2 class="form__heading">Agent Registration Form</h2>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="regFullName">Full Name</label>
+              <input type="text" id="regFullName" class="form__input" placeholder="e.g. Adewale John Olamide" required>
+            </div>
+            <div class="form__group">
+              <label for="regMatric">Matric Number</label>
+              <input type="text" id="regMatric" class="form__input" placeholder="e.g. MAT/20/22/0001" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="regDept">Department</label>
+              <select id="regDept" class="form__select" required>
+                <option value="">Select Department</option>
+                <option value="csc">Computer Science</option>
+                <option value="agg">Agriculture</option>
+                <option value="eep">Electrical Engineering</option>
+                <option value="mcb">Microbiology</option>
+                <option value="bus">Business Admin</option>
+                <option value="acc">Accounting</option>
+                <option value="eco">Economics</option>
+                <option value="slt">Science Lab Tech</option>
+                <option value="vet">Veterinary Medicine</option>
+                <option value="fwt">Forestry & Wildlife</option>
+                <option value="bch">Biochemistry</option>
+                <option value="phm">Pharmacy</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="regArea">Area of Coverage</label>
+              <select id="regArea" class="form__select" required>
+                <option value="">Select Area</option>
+                <option value="camp">Camp</option>
+                <option value="harmony">Harmony</option>
+                <option value="gateway">Gateway</option>
+                <option value="aluta">Aluta</option>
+                <option value="campus-extension">Campus Extension</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="regPhone">Phone / WhatsApp Number</label>
+              <input type="tel" id="regPhone" class="form__input" placeholder="0801 234 5678" required>
+            </div>
+            <div class="form__group">
+              <label for="regNIN">NIN or Student ID</label>
+              <input type="text" id="regNIN" class="form__input" placeholder="National Identification Number" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="regPhoto">Passport Photograph</label>
+              <input type="file" id="regPhoto" class="form__file" accept="image/*" required>
+              <span class="form__hint">JPG or PNG, max 2MB</span>
+            </div>
+            <div class="form__group">
+              <label for="regIDUpload">Upload NIN / Student ID</label>
+              <input type="file" id="regIDUpload" class="form__file" accept="image/*,.pdf" required>
+              <span class="form__hint">JPG, PNG or PDF, max 5MB</span>
+            </div>
+          </div>
+
+          <div class="form__divider"></div>
+          <h3 class="form__subheading">Caretaker Information</h3>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label for="regCaretakerName">Caretaker / Landlord Name</label>
+              <input type="text" id="regCaretakerName" class="form__input" placeholder="Full name of your caretaker" required>
+            </div>
+            <div class="form__group">
+              <label for="regCaretakerOffice">Caretaker Office Location</label>
+              <input type="text" id="regCaretakerOffice" class="form__input" placeholder="e.g. Behind First Bank, Camp" required>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__checkbox-label">
+              <input type="checkbox" id="regAgree" required>
+              <span>I confirm that all information provided is accurate. I understand that providing false information will result in permanent disqualification from the platform.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full btn--lg">Submit Registration</button>
+        </form>
+      </div>
+
+      <div class="register-sidebar reveal">
+        <div class="sidebar-card">
+          <h3>What Happens After Registration?</h3>
+          <ol class="process-list">
+            <li>
+              <span class="process-list__step">1</span>
+              <div>
+                <strong>Document Review</strong>
+                <p>The SUG Welfare team reviews your submitted documents within 24-48 hours.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__step">2</span>
+              <div>
+                <strong>Record Cross-Check</strong>
+                <p>Your matriculation number is verified against the university's official records.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__step">3</span>
+              <div>
+                <strong>Identity Verification</strong>
+                <p>Your NIN and passport photo are cross-referenced with campus security databases.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__step">4</span>
+              <div>
+                <strong>Approval & Agent ID</strong>
+                <p>Upon successful verification, you receive a unique Agent ID and dashboard access via email and SMS.</p>
+              </div>
+            </li>
+            <li>
+              <span class="process-list__step">5</span>
+              <div>
+                <strong>Start Listing</strong>
+                <p>You can now create property listings, manage inquiries, and connect with students.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="sidebar-card sidebar-card--info">
+          <h3>Requirements</h3>
+          <ul class="checklist">
+            <li>Valid FUNAAB matriculation number</li>
+            <li>National Identification Number (NIN)</li>
+            <li>Passport-sized photograph</li>
+            <li>Recommendation from a caretaker</li>
+            <li>Active phone number</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<?php include 'includes/footer.php'; ?>
